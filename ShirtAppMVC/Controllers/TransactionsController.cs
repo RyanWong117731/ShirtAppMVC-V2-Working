@@ -70,7 +70,7 @@ namespace ShirtAppMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TransactionID,Email,ShirtID")] Transaction transaction)
+        public async Task<IActionResult> Create([Bind("TransactionID,Email,ShippingAdress,ShirtID")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
@@ -114,7 +114,7 @@ namespace ShirtAppMVC.Controllers
 
             if (await TryUpdateModelAsync<Transaction>(transactionToUpdate,
                 "",
-                c => c.Email, c => c.ShirtID))
+                c => c.Email, c=> c.ShippingAdress , c => c.ShirtID))
             {
                 try
                 {

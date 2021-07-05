@@ -20,7 +20,10 @@
                 Shipping Adress
             </th>
             <th>
-                Shirts
+                Shirt Name
+            </th>
+            <th>
+                Shirt Price
             </th>
             <th></th>
         </tr>
@@ -28,22 +31,25 @@
     <tbody>
         @foreach (var item in Model.Transactions)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ShippingAdress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Shirt.ShirtName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shirt.ShirtName)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Shirt.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

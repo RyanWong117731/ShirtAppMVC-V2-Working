@@ -16,7 +16,6 @@ namespace ShirtAppMVC.Models
 
         [Required]
         public string ShirtName { get; set; }
-        [Required]
         public string FilePath { get; set; }
 
         public float Price { get; set; }

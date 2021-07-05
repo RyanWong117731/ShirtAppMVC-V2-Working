@@ -75,7 +75,7 @@ namespace ShirtAppMVC.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShirtID,ShirtName,Price,Size")] Shirt shirt)
+        public async Task<IActionResult> Create([Bind("ShirtID,ShirtName,FilePath,Price,Size")] Shirt shirt)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace ShirtAppMVC.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShirtID,ShirtName,Price,Size")] Shirt shirt)
+        public async Task<IActionResult> Edit(int id, [Bind("ShirtID,ShirtName,FilePath,Price,Size")] Shirt shirt)
         {
             if (id != shirt.ShirtID)
             {
